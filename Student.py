@@ -12,5 +12,14 @@ class Student(Human.Human):
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
+    def __hash__(self):
+        return hash(str(self))
+
+    def __eq__(self, other):
+        if self.last_name == other.last_name:
+            return True
+        else:
+            return False
+
 
 
